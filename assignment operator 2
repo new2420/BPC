@@ -1,0 +1,47 @@
+#include<iostream>
+
+using namespace std;
+
+class employee
+{
+    int idnum;
+    double salary;
+    public:
+        employee(){}
+
+        employee(int a,int b)
+        {
+            idnum=a;
+            salary=b;
+        }
+
+        void dis()
+        {
+            cout<<"1st emp:"<<endl<<"idnum="<<idnum<<endl<<"salary="<<salary<<endl<<endl;
+        }
+
+        void operator=(employee &emp)
+        {
+            idnum=emp.idnum;
+            salary=emp.salary;
+        }
+
+        void show()
+        {
+            cout<<"2nd emp:"<<endl<<"idnum="<<idnum<<endl<<"salary="<<salary<<endl;
+        }
+};
+
+main()
+{
+    int a;
+    double b;
+
+    cout<<"enter id num and salary"<<endl;
+    cin>>a>>b;
+    employee e1(a,b);
+    e1.dis();
+    employee e2;
+    e2=e1;
+    e2.show();  
+}
